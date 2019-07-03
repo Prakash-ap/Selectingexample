@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     boolean checked6=false;
 
     boolean onclick=false;
-    int count=2;
+    int count=0;
 
 
     @Override
@@ -45,11 +45,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public boolean onLongClick(View view) {
                 layout1.setBackgroundColor(Color.MAGENTA);
-                checked1 = true;
+               // checked1 = true;
                 onclick=true;
-
-
+                count++;
+                layout1.setTag("true");
                 return true;
+
+
+
             }
 
         });
@@ -57,8 +60,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public boolean onLongClick(View view) {
                 layout2.setBackgroundColor(Color.MAGENTA);
-                checked2=true;
+             //   checked2=true;
                 onclick=true;
+                count++;
+                layout2.setTag("true");
+
 
                 return true;
             }
@@ -67,8 +73,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public boolean onLongClick(View view) {
                 layout3.setBackgroundColor(Color.MAGENTA);
-                checked4=true;
+             //   checked4=true;
                 onclick=true;
+                count++;
+                layout3.setTag("true");
+
 
                 return true;
             }
@@ -77,8 +86,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public boolean onLongClick(View view) {
                 layout4.setBackgroundColor(Color.MAGENTA);
-                checked1=true;
+            //    checked1=true;
                 onclick=true;
+                count++;
+                layout4.setTag("true");
+
 
                 return true;
             }
@@ -86,8 +98,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public boolean onLongClick(View view) {
                 layout5.setBackgroundColor(Color.MAGENTA);
-                checked1=true;
+               // checked1=true;
                 onclick=true;
+                count++;
+                layout5.setTag("true");
+
 
                 return true;
             }
@@ -96,8 +111,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public boolean onLongClick(View view) {
                 layout6.setBackgroundColor(Color.MAGENTA);
-                checked1=true;
+               // checked1=true;
                 onclick=true;
+                count++;
+                layout6.setTag("true");
+
 
                 return true;
             }
@@ -110,15 +128,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.layout1:
-                if(checked1 && onclick) {
+                if(layout1.getTag().toString().equals("true") && onclick) {
                     layout1.setBackgroundColor(Color.TRANSPARENT);
-                    checked1 = false;
+                  //  checked1 = false;
+                    layout1.setTag("false");
+                    count--;
 
 
                 }else if(onclick) {
                     if(count<2) {
                         layout1.setBackgroundColor(Color.MAGENTA);
-                        checked1 = true;
+                       // checked1 = true;
+                        layout1.setTag("true");
                         count++;
                     }
 
@@ -128,59 +149,89 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 break;
             case R.id.layout2:
-                if(checked2 && onclick) {
+                if(layout2.getTag().toString().equals("true") && onclick) {
                     layout2.setBackgroundColor(Color.TRANSPARENT);
-                    checked2= false;
+//                    checked2= false;
+                    layout2.setTag("false");
+                    count--;
                 }else if(onclick) {
-                    layout2.setBackgroundColor(Color.MAGENTA);
-                    checked2=true;
+                    if(count<2) {
+                        layout2.setBackgroundColor(Color.MAGENTA);
+//                        checked2 = true;
+                        layout2.setTag("true");
+                        count++;
+                    }
 
                 }else {
                     layout2.setBackgroundColor(Color.TRANSPARENT);
                 }
                 break;
             case R.id.layout3:
-                if(checked3 && onclick) {
+                if(layout3.getTag().toString().equals("true") && onclick) {
                     layout3.setBackgroundColor(Color.TRANSPARENT);
-                    checked3 = false;
+//                    checked3 = false;
+                    layout3.setTag("false");
+                    count--;
                 }else if(onclick){
-                    layout3.setBackgroundColor(Color.MAGENTA);
-                    checked3=true;
+                    if(count<2) {
+                        layout3.setBackgroundColor(Color.MAGENTA);
+//                        checked3 = true;
+                        layout3.setTag("true");
+                        count++;
+                    }
 
                 }else {
                     layout3.setBackgroundColor(Color.TRANSPARENT);
                 }
                 break;
             case R.id.layout4:
-                if(checked4 && onclick) {
+                if(layout4.getTag().toString().equals("true") && onclick) {
                     layout4.setBackgroundColor(Color.TRANSPARENT);
-                    checked4 = false;
+//                    checked4 = false;
+                    layout4.setTag("false");
+                    count--;
                 }else if(onclick) {
-                    layout4.setBackgroundColor(Color.MAGENTA);
-                    checked4=true;
+                    if(count<2) {
+                        layout4.setBackgroundColor(Color.MAGENTA);
+//                        checked4 = true;
+                        layout4.setTag("true");
+                        count++;
+                    }
                 }else {
                     layout4.setBackgroundColor(Color.TRANSPARENT);
 
                 }
                 break;
             case R.id.layout5:
-                if(checked5) {
+                if(layout5.getTag().toString().equals("true") && onclick) {
                     layout5.setBackgroundColor(Color.TRANSPARENT);
-                    checked5 = false;
+//                    checked5 = false;
+                    layout5.setTag("false");
+                    count--;
                 }else if(onclick) {
-                    layout5.setBackgroundColor(Color.MAGENTA);
-                    checked5=true;
+                    if(count<2) {
+                        layout5.setBackgroundColor(Color.MAGENTA);
+//                        checked5 = true;
+                        layout5.setTag("true");
+                        count++;
+                    }
                     }else {
                     layout5.setBackgroundColor(Color.TRANSPARENT);
                 }
                 break;
             case R.id.layout6:
-                if(checked6) {
+                if(layout6.getTag().toString().equals("true") && onclick) {
                     layout6.setBackgroundColor(Color.TRANSPARENT);
-                    checked6 = false;
+//                    checked6 = false;
+                    layout6.setTag("false");
+                    count--;
                 }else if(onclick){
-                    layout6.setBackgroundColor(Color.MAGENTA);
-                    checked6=true;
+                    if(count<2) {
+                        layout6.setBackgroundColor(Color.MAGENTA);
+//                        checked6 = true;
+                        layout6.setTag("true");
+                        count++;
+                    }
 
                 }else {
                     layout6.setBackgroundColor(Color.TRANSPARENT);
